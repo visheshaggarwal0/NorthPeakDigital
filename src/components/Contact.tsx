@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface FormErrors {
   name?: string;
@@ -77,18 +77,24 @@ export default function Contact() {
           <p className="text-brand-muted text-lg max-w-2xl mx-auto">Ready to scale your digital presence? Fill out the form below and our strategy team will be in touch within 24 hours.</p>
         </div>
 
-        {isSuccess && (
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-8 p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-md text-center font-medium"
-            role="alert"
-          >
-            Thank you! Your inquiry has been submitted successfully. We'll be in touch soon.
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isSuccess && (
+            <motion.div 
+              initial={{ opacity: 0, y: -10, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: 'auto' }}
+              exit={{ opacity: 0, y: -10, height: 0 }}
+              className="mb-8 p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-md text-center font-medium overflow-hidden"
+              role="alert"
+            >
+              Thank you! Your inquiry has been submitted successfully. We'll be in touch soon.
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-        <div className="p-8 md:p-12 rounded-2xl bg-brand-border/10 border border-brand-border relative overflow-hidden">
+        <motion.div 
+          whileHover={{ scale: 1.02 }}
+          className="p-8 md:p-12 rounded-2xl bg-brand-border/10 border border-brand-border relative overflow-hidden"
+        >
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[80px] pointer-events-none" />
           
           <form onSubmit={handleSubmit} noValidate className="space-y-6 relative z-10">
@@ -105,7 +111,19 @@ export default function Contact() {
                   placeholder="Jane Doe"
                   aria-invalid={!!errors.name}
                 />
-                {errors.name && <p className="mt-1 text-sm text-red-400" role="alert">{errors.name}</p>}
+                <AnimatePresence>
+                  {errors.name && (
+                    <motion.p 
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="mt-1 text-sm text-red-400 overflow-hidden" 
+                      role="alert"
+                    >
+                      {errors.name}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </div>
               
               <div>
@@ -120,7 +138,19 @@ export default function Contact() {
                   placeholder="jane@company.com"
                   aria-invalid={!!errors.email}
                 />
-                {errors.email && <p className="mt-1 text-sm text-red-400" role="alert">{errors.email}</p>}
+                <AnimatePresence>
+                  {errors.email && (
+                    <motion.p 
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="mt-1 text-sm text-red-400 overflow-hidden" 
+                      role="alert"
+                    >
+                      {errors.email}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
 
@@ -142,7 +172,19 @@ export default function Contact() {
                   <option value="cloud">Cloud & DevOps</option>
                   <option value="seo">Technical SEO</option>
                 </select>
-                {errors.service && <p className="mt-1 text-sm text-red-400" role="alert">{errors.service}</p>}
+                <AnimatePresence>
+                  {errors.service && (
+                    <motion.p 
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="mt-1 text-sm text-red-400 overflow-hidden" 
+                      role="alert"
+                    >
+                      {errors.service}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </div>
               
               <div>
@@ -174,17 +216,31 @@ export default function Contact() {
                 placeholder="Tell us about your goals, timeline, and any specific requirements..."
                 aria-invalid={!!errors.message}
               ></textarea>
-              {errors.message && <p className="mt-1 text-sm text-red-400" role="alert">{errors.message}</p>}
+              <AnimatePresence>
+                {errors.message && (
+                  <motion.p 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="mt-1 text-sm text-red-400 overflow-hidden" 
+                    role="alert"
+                  >
+                    {errors.message}
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </div>
 
-            <button 
+            <motion.button 
               type="submit"
-              className="w-full py-4 bg-brand-accent text-white font-bold rounded-md hover:bg-brand-accent/90 transition-all flex justify-center items-center gap-2 shadow-[0_0_20px_var(--color-brand-accent-glow)]"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full py-4 bg-brand-accent text-white font-bold rounded-md transition-colors flex justify-center items-center gap-2 shadow-[0_0_20px_var(--color-brand-accent-glow)]"
             >
               Submit Inquiry
-            </button>
+            </motion.button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

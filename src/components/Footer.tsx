@@ -11,9 +11,9 @@ export default function Footer() {
         </div>
         
         <div className="flex gap-8 text-sm text-brand-muted">
-          <a href="#" className="hover:text-brand-text transition-colors">Twitter</a>
-          <a href="#" className="hover:text-brand-text transition-colors">LinkedIn</a>
-          <a href="#" className="hover:text-brand-text transition-colors">GitHub</a>
+          <a href="/" className="hover:text-brand-text transition-colors">Twitter</a>
+          <a href="/" className="hover:text-brand-text transition-colors">LinkedIn</a>
+          <a href="/" className="hover:text-brand-text transition-colors">GitHub</a>
         </div>
         
         <div className="text-sm text-brand-muted text-center md:text-left">

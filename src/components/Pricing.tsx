@@ -41,16 +41,26 @@ export default function Pricing() {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.03 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{
+                duration: 0.5,
+                delay: i * 0.1,
+              }}
+              animate={tier.popular ? {
+                boxShadow: ["0px 0px 10px rgba(79, 70, 229, 0.15)", "0px 0px 40px rgba(79, 70, 229, 0.4)", "0px 0px 10px rgba(79, 70, 229, 0.15)"],
+                transition: {
+                  boxShadow: { repeat: Infinity, duration: 3, ease: "easeInOut" }
+                }
+              } : {}}
               className={`p-8 rounded-2xl border relative flex flex-col ${
                 tier.popular 
-                ? 'bg-brand-border/30 border-brand-accent shadow-[0_0_30px_var(--color-brand-accent-glow)]' 
+                ? 'bg-brand-border/30 border-brand-accent' 
                 : 'bg-brand-bg border-brand-border'
               }`}
             >
               {tier.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-accent text-white px-4 py-1 rounded-full text-xs font-display font-bold uppercase tracking-wider shadow-lg">
                   Most Popular
                 </div>
               )}

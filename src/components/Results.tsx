@@ -50,7 +50,7 @@ export default function Results() {
               <div className="font-serif text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-text to-brand-muted mb-2">
                 {stat.value}
               </div>
-              <div className="text-brand-muted font-medium uppercase tracking-wider text-sm">{stat.label}</div>
+              <div className="text-brand-muted font-display font-medium uppercase tracking-wider text-sm">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -66,6 +66,7 @@ export default function Results() {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.03 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="p-8 rounded-2xl bg-brand-border/20 border border-brand-border relative"
@@ -75,7 +76,7 @@ export default function Results() {
                 "{t.quote}"
               </p>
               <div className="flex items-center gap-4">
-                <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full border border-brand-border object-cover" />
+                <img src={t.avatar} alt={t.name} width="48" height="48" loading="lazy" className="w-12 h-12 rounded-full border border-brand-border object-cover" />
                 <div>
                   <div className="font-bold text-brand-text">{t.name}</div>
                   <div className="text-sm text-brand-muted">{t.title}</div>
