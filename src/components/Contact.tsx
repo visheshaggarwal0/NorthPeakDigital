@@ -95,8 +95,6 @@ export default function Contact() {
           whileHover={{ scale: 1.02 }}
           className="p-8 md:p-12 rounded-2xl bg-brand-border/10 border border-brand-border relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[80px] pointer-events-none" />
-          
           <form onSubmit={handleSubmit} noValidate className="space-y-6 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -235,7 +233,7 @@ export default function Contact() {
               type="submit"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full py-4 bg-brand-accent text-white font-bold rounded-md transition-colors flex justify-center items-center gap-2 shadow-[0_0_20px_var(--color-brand-accent-glow)]"
+              className="w-full py-4 bg-brand-accent text-white font-bold rounded-md transition-colors flex justify-center items-center gap-2"
             >
               Submit Inquiry
             </motion.button>

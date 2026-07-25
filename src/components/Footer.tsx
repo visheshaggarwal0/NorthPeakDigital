@@ -16,8 +16,14 @@ export default function Footer() {
           <a href="/" className="hover:text-brand-text transition-colors">GitHub</a>
         </div>
         
-        <div className="text-sm text-brand-muted text-center md:text-left">
-          &copy; {new Date().getFullYear()} NorthPeak Digital. All rights reserved.
+        <div className="text-sm text-brand-muted text-center md:text-right">
+          <div className="mb-2">
+            &copy; {new Date().getFullYear()} NorthPeak Digital. All rights reserved.
+          </div>
+          <div className="flex flex-col md:items-end gap-1">
+            <span>Built for <a href="https://digitalheroesco.com" className="text-brand-accent hover:underline" target="_blank" rel="noopener noreferrer">Digital Heroes Training Task</a></span>
+            <span>By Vishesh Aggarwal (<a href="mailto:visheshaggarwal.ai@gmail.com" className="hover:text-brand-text transition-colors">visheshaggarwal.ai@gmail.com</a>)</span>
+          </div>
         </div>
       </div>
     </footer>

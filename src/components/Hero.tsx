@@ -12,7 +12,7 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 1, y: 20 },
+  hidden: { opacity: 0.01, y: 20 },
   visible: { 
     opacity: 1, 
     y: 0,
@@ -23,9 +23,6 @@ const itemVariants = {
 export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden min-h-[90vh] flex items-center">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-accent/15 rounded-full blur-[140px] pointer-events-none -z-10" />
-      
       <motion.div 
         className="max-w-4xl mx-auto text-center z-10 relative"
         variants={containerVariants}
@@ -39,7 +36,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1 
-          className="font-serif text-5xl md:text-7xl font-bold leading-tight md:leading-[1.1] mb-6 text-brand-text"
+          className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] md:leading-[1.15] mb-6 text-brand-text max-w-3xl mx-auto"
           variants={itemVariants}
         >
           We Scale Digital Products Through High-Impact <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-amber">Engineering</span> & Design.

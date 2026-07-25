@@ -72,8 +72,8 @@ export default function ParticleBackground() {
           let directionY = forceDirectionY * force * this.density;
 
           // Push particles away from mouse to create an interactive wake
-          this.x -= directionX * 0.2;
-          this.y -= directionY * 0.2;
+          this.x -= directionX * 0.5;
+          this.y -= directionY * 0.5;
         }
       }
 
@@ -90,7 +90,7 @@ export default function ParticleBackground() {
     const initParticles = () => {
       particles = [];
       // Adjust density for more particles while staying performant
-      const numParticles = Math.min(Math.floor((canvas!.width * canvas!.height) / 8500), 180);
+      const numParticles = Math.min(Math.floor((canvas!.width * canvas!.height) / 6000), 250);
       for (let i = 0; i < numParticles; i++) {
         particles.push(new Particle());
       }

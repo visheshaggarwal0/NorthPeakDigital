@@ -19,6 +19,7 @@ const FAQ = lazy(() => import('./components/FAQ'));
 const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
 const AIAssistant = lazy(() => import('./components/AIAssistant'));
+const SectionDivider = lazy(() => import('./components/SectionDivider'));
 
 export default function App() {
   const { scrollYProgress } = useScroll();
@@ -42,9 +43,13 @@ export default function App() {
           <Hero />
           <Suspense fallback={<div className="min-h-[50vh]" />}>
             <Services />
+            <SectionDivider />
             <Results />
+            <SectionDivider />
             <Pricing />
+            <SectionDivider />
             <FAQ />
+            <SectionDivider />
             <Contact />
           </Suspense>
         </main>

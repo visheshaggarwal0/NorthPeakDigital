@@ -47,7 +47,7 @@ export default function Results() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="font-serif text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-text to-brand-muted mb-2">
+              <div className="font-serif text-5xl md:text-6xl font-bold text-brand-text mb-2">
                 {stat.value}
               </div>
               <div className="text-brand-muted font-display font-medium uppercase tracking-wider text-sm">{stat.label}</div>

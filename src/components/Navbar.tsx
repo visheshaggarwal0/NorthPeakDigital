@@ -25,7 +25,7 @@ export default function Navbar() {
           <MagneticButton 
             as="a"
             href="#contact" 
-            className="px-5 py-2.5 bg-brand-accent hover:bg-brand-accent/90 text-white text-sm font-display font-semibold rounded-md transition-all shadow-[0_0_20px_var(--color-brand-accent-glow)] block"
+            className="px-5 py-2.5 bg-brand-accent hover:bg-brand-accent/90 text-white text-sm font-display font-semibold rounded-md transition-all block"
           >
             Get Started
           </MagneticButton>

@@ -93,7 +93,7 @@ export default function AIAssistant() {
     <>
       <motion.button
         aria-label="Open AI Assistant"
-        className="fixed bottom-6 right-6 w-14 h-14 bg-brand-accent rounded-full flex items-center justify-center text-white shadow-[0_0_20px_var(--color-brand-accent-glow)] z-50 hover:bg-brand-accent/90 transition-colors"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-brand-accent rounded-full flex items-center justify-center text-white shadow-lg z-50 hover:bg-brand-accent/90 transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
