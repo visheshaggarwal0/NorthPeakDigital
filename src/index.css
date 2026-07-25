@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  
+  --color-brand-bg: #0B0F17;
+  --color-brand-text: #F8FAFC;
+  --color-brand-muted: #94A3B8;
+  --color-brand-border: #1E293B;
+  --color-brand-accent: #4F46E5;
+  --color-brand-accent-glow: rgba(79, 70, 229, 0.15);
+  --color-brand-amber: #F59E0B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-text);
+  font-family: var(--font-sans);
+}
